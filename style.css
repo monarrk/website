@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Gentium+Basic|Libre+Baskerville');
+
+body {
+  font-family: 'Gentium Basic', serif;
+  margin-left: 2%;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Libre Baskerville', serif;
+}
+
+#TOP_HEADER {
+  font-size: 10em;
+  text-align: center;
+}
+
+.hoverable {
+  transition: ease-in-out 0.4s
+}
+.hoverable:hover {
+  box-shadow: 3px 3px 8px 1px #888888;
+}

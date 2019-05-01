@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--THIS ICON IS FROM GIANT DAYS (https://www.boom-studios.com/series/giant-days/), I DO NOT OWN IT-->
+    <link rel="icon" href="https://cdn.glitch.com/011624e3-bd8f-4622-b19d-81054a5d0d61%2Fmonarrkcirc.gif?1556730693033">
+
+    <title>Monarrk</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div id="vm">
+      <h1 id="TOP_HEADER" @click="vm.msggen()">{{ message }}</h1>
+      <h3>
+        whoami
+      </h3>
+      <p>
+        monarrk, the funkiest fool around. i mess with computers, disassemble things, and play music.
+      </p>
+      <h3>
+        ls
+      </h3>
+      <p>
+        <ul>
+          <li><a href="https://github.com/ithinkthisisarc/mmfr">MMFR</a>, a bad package manager.</li>
+          <li><a href="https://github.com/ithinkthisisarc/paranoid-files">Paranoid Files</a>, a file encrypter.</li>
+          <li><a href="https://github.com/ithinkthisisarc/PoTsai">PoTsai</a>, (WIP) a DDoS attacker</li> 
+        </ul>
+      </p>
+      <h3>
+        find me in the wild
+      </h3>
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="50" height="50" @click="vm.visit_loc('github.com/ithinkthisisarc')" class="hoverable"/> 
+      <img src="https://www.redditstatic.com/new-icon.png" width="50" height="50" @click="vm.visit_loc('www.reddit.com/user/its_not_monarrk')" class="hoverable"/> 
+      <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn4.iconfinder.com%2Fdata%2Ficons%2Fsocial-messaging-ui-color-shapes-2-free%2F128%2Fsocial-instagram-new-circle-512.png&f=1" width="50" height="50" @click="vm.visit_loc('instagram.com/skye.bleed/')" class="hoverable"/> 
+      <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F48%2FMastodon_Logotype_%2528Simple%2529.svg%2F559px-Mastodon_Logotype_%2528Simple%2529.svg.png&f=1" width="50" height="50" target="_blank" @click="vm.visit_loc('cybre.space/@monarrk')" class="hoverable"/>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    var messages = ["what the heck is even going on",
+                    "we're hacking you right now!",
+                    "welcome",
+                    "sorry you had to see this",
+                    "uhhhhhhhhhhhhhhhhhhh",
+                    "you watch anime",
+                    "hey, i didn't see you there",
+                    "hi",
+                    "hello, [Object object]",
+                    "doot doot",
+                    "why not rewrite it in rust?",
+                    "you're gay",
+                   ];
+    var vm = new Vue({
+      el: "#vm",
+      data: {
+        message: messages[Math.floor(Math.random() * messages.length)]
+      },
+      methods: {
+        visit_loc: function(loc) {
+          window.location.href = `https://${loc}`;
+        },
+
+        msggen: function() {
+          this.message = messages[Math.floor(Math.random() * messages.length)];
+        },
+      },
+    })
+  </script>
+</html>
